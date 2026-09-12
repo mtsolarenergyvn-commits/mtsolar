@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+  <title>MT Solar Energy Việt Nam</title>
+  <link rel="icon" type="image/png" href="assets/images/header-logo.png">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/tooplate-main.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <style>
+    /* Fix khung Header luôn chuẩn Flexbox 1 hàng */
+    nav.navbar .container {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+
+    /* Chỉnh Logo to & chuẩn lề trái */
+    nav.navbar .navbar-brand {
+      margin-right: 0 !important;
+      padding: 0 !important;
+    }
+
+    nav.navbar .navbar-brand img {
+      height: 100px !important;
+      /* Độ cao logo cân đối */
+      max-height: none !important;
+      width: auto !important;
+    }
+
+    /* Chỉnh Menu chữ gọn gàng, không bị vỡ dòng */
+    nav.navbar .navbar-nav {
+      flex-direction: row !important;
+    }
+
+    nav.navbar .navbar-nav .nav-link {
+      font-size: 50 !important;
+      /* Kích thước chữ vừa đẹp */
+      font-weight: 700 !important;
+      white-space: nowrap !important;
+      /* Cấm rớt dòng chữ (như CONTACT US) */
+      padding: 10px 15px !important;
+      /* Khoảng cách giữa các nút */
+    }
+  </style>
+  <!-- Bộ dịch tự động Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'vi',
+        includedLanguages: 'en,zh-CN,vi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    function changeLanguage(langCode) {
+      // 1. Cập nhật giao diện nút Active
+      document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.classList.remove('active');
+      });
+
+      var targetId = 'lang-' + (langCode === 'zh-CN' ? 'zh' : langCode);
+      var activeBtn = document.getElementById(targetId);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      // 2. Kích hoạt dịch bằng cookie chuẩn của Google Translate
+      if (langCode === 'vi') {
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;" + window.location.host;
+      } else {
+        document.cookie = "googtrans=/vi/" + langCode + "; path=/;";
+        document.cookie = "googtrans=/vi/" + langCode + "; path=/;" + window.location.host;
+      }
+
+      // Tải lại trang nhẹ để áp dụng ngôn ngữ mới
+      window.location.reload();
+      // Tự bật active cho nút theo Cookie khi trang reload xong
+      document.addEventListener("DOMContentLoaded", function () {
+        var match = document.cookie.match(/(?:^|; )googtrans=([^;]*)/);
+        var lang = match ? match[1].split('/')[2] : 'vi';
+        var targetId = 'lang-' + (lang === 'zh-CN' ? 'zh' : lang);
+
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        if (document.getElementById(targetId)) document.getElementById(targetId).classList.add('active');
+      });
+    }
+  </script>
+  <script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <style>
+    /* CSS ẩn bộ chọn mặc định của Google và làm đẹp nút bấm */
+    #google_translate_element {
+      display: none !important;
+    }
+
+    body {
+      top: 0px !important;
+    }
+
+    .goog-te-banner-frame {
+      display: none !important;
+    }
+
+    .lang-btn {
+      cursor: pointer;
+      opacity: 0.7;
+      padding: 0 4px;
+      text-decoration: none !important;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      opacity: 1;
+      font-weight: bold !important;
+      border-bottom: 2px solid #fff;
+    }
+
+    /* Ẩn hoàn toàn thanh công cụ Google Translate và sửa lỗi tràn khung */
+    /* Triệt tiêu khung trắng Google Translate tiêm vào đầu trang */
+    .skiptranslate {
+      display: none !important;
+    }
+
+    /* Ép body không bị đẩy xuống dưới */
+    body {
+      top: 0px !important;
+      position: static !important;
+    }
+
+    iframe.goog-te-banner-frame {
+      display: none !important;
+    }
+
+    #google_translate_element {
+      display: none !important;
+    }
+
+    /* Style mặc định cho các nút ngôn ngữ */
+    .lang-btn {
+      cursor: pointer;
+      opacity: 0.7;
+      padding: 2px 6px;
+      text-decoration: none !important;
+      color: #fff !important;
+      transition: all 0.2s ease;
+    }
+
+    /* Style KHI DƯỢC ACTIVE: In đậm tuyệt đối + gạch chân trắng */
+    .lang-btn.active {
+      opacity: 1 !important;
+      font-weight: 900 !important;
+      border-bottom: 2px solid #ffffff !important;
+    }
+
+    .ico-zalo span {
+      font-size: 10px;
+      font-weight: bold;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+  </style>
+  <!--
+Tooplate 2114 Pixie
+https://www.tooplate.com/view/2114-pixie
+-->
+</head>
+
+<body>
+
+  <!-- Pre Header -->
+  <div id="pre-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-between align-items-center">
+          <span>CÔNG TY TNHH MT SOLAR ENERGY VIỆT NAM - ĐỐI TÁC CUNG CẤP HỆ THỐNG VẬT TƯ VÀ PHỤ KIỆN NĂNG LƯỢNG MẶT TRỜI
+            CHẤT LƯỢNG</span>
+          <!-- Khối chọn ngôn ngữ nằm bên phải -->
+          <div class="language-select notranslate" translate="no" style="font-size: 13px; color: #fff;">
+            <a onclick="window.selectedLang='vi'; changeLanguage('vi');" id="lang-vi" class="lang-btn">VN</a> |
+            <a onclick="window.selectedLang='en'; changeLanguage('en');" id="lang-en" class="lang-btn">EN</a> |
+            <a onclick="window.selectedLang='zh'; changeLanguage('zh-CN');" id="lang-zh" class="lang-btn">中文</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#" style="height: auto !important; line-height: normal !important;"><img
+          src="assets/images/header-logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <span></span>
+      <span></span>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Trang Chủ
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Sản Phẩm</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Về Chúng Tôi</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="contact.html">Thông Tin Liên Hệ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <!-- About Page Starts Here -->
+  <div class="contact-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h1>Thông Tin Liên Hệ</h1>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div id="map">
+            <!-- How to change your own map point
+                           1. Go to Google Maps
+                           2. Click on your location point
+                           3. Click "Share" and choose "Embed map" tab
+                           4. Copy only URL and paste it within the src="" field below
+                    -->
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1959.115613365788!2d106.62510958822487!3d10.870009931407726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b5439b68bf5%3A0x1512da0208517f65!2sC%C3%94NG%20TY%20TNHH%20MT%20SOLAR%20ENERGY%20VI%E1%BB%86T%20NAM!5e0!3m2!1svi!2s!4v1788946147204!5m2!1svi!2s"
+              width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="right-content">
+            <div class="container">
+              <!-- <form id="contact" action="" onsubmit="handleSendEmail(event)">
+                <div class="row">
+                  <div class="col-md-6">
+                    <fieldset>
+                      <input name="name" type="text" class="form-control" id="name" placeholder="Your name..."
+                        required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-md-6">
+                    <fieldset>
+                      
+                      <input name="email" type="email" class="form-control" id="email" placeholder="Your email..."
+                        required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject..."
+                        required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..."
+                        required=""></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="button">Send Message</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form> -->
+              <form id="main-contact-form" action="" onsubmit="handleMainContact(event)" novalidate>
+                <div class="row">
+                  <div class="col-md-6">
+                    <fieldset>
+                      <input name="name" type="text" class="form-control" id="contact_name" placeholder="Tên bạn..."
+                        required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-md-6">
+                    <fieldset>
+                      <input name="email" type="email" class="form-control" id="contact_email"
+                        placeholder="Email bạn..." required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <input name="subject" type="text" class="form-control" id="contact_subject"
+                        placeholder="Chủ đề..." required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <textarea name="message" rows="6" class="form-control" id="contact_message"
+                        placeholder="Nội dung muốn trao đổi..." required=""></textarea>
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <button type="submit" id="main-form-submit" class="button">Gửi</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About Page Ends Here -->
+
+  <!-- Subscribe Form Starts Here -->
+
+  <div class="subscribe-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h1>Để lại thông tin liên hệ tại đây</h1>
+          </div>
+        </div>
+        <div class="col-md-8 offset-md-2">
+          <div class="main-content">
+            <p>MT Solar Energy hy vọng có thể sẽ cùng đồng hành cùng bạn trong các dự án sắp tới</p>
+            <div class="container">
+              <form id="subscribe" onsubmit="handleSendEmail(event)">
+                <div class="row">
+                  <div class="col-md-7">
+                    <fieldset>
+                      <!-- Đã bỏ required để JS tự bắt lỗi theo ngôn ngữ -->
+                      <input name="email" type="text" class="form-control" id="email"
+                        placeholder="Nhập email của bạn...">
+                    </fieldset>
+                  </div>
+                  <div class="col-md-5">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="button">Liên hệ</button>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Subscribe Form Ends Here -->
+
+
+
+  <!-- Footer Starts Here -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="logo">
+            <img src="assets/images/header-logo.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="footer-menu">
+            <ul>
+              <li><a href="#">Trang Chủ</a></li>
+              <li><a href="#">Trợ Giúp</a></li>
+              <li><a href="#">Chính Sách Quyền Riêng Tư</a></li>
+              <li><a href="#">Cơ Chế Hoạt Động</a></li>
+              <li><a href="#">Liên Hệ Với Chúng Tôi</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="social-icons">
+            <ul>
+              <!-- Facebook -->
+              <li><a href="https://www.facebook.com/profile.php?id=61593665455048" target="_blank"><i
+                    class="fa fa-facebook"></i></a></li>
+
+              <!-- Zalo -->
+              <li><a href="https://zalo.me/0974954509" target="_blank" class="ico-zalo"><span>Zalo</span></a></li>
+
+              <!-- Gmail / Email -->
+              <li><a href="mailto:sunsmile618@gmail.com"><i class="fa fa-envelope"></i></a></li>
+
+              <!-- WeChat -->
+              <li><a href="javascript:void(0);" onclick="alert('WeChat ID:ly19884230')"><i class="fa fa-weixin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Ends Here -->
+
+
+  <!-- Sub Footer Starts Here -->
+  <div class="sub-footer" style="background-color: black" style="color: #ffff;" style="font-weight: bold;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright-text">
+            <p>Copyright &copy; 2026 MT SOLAR ENERGY VIETNAM CO.,LTD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Sub Footer Ends Here -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Additional Scripts -->
+
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/flex-slider.js"></script>
+
+
+  <script language="text/Javascript">
+    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+    function clearField(t) {                   //declaring the array outside of the
+      if (!cleared[t.id]) {                      // function makes it static and global
+        cleared[t.id] = 1;  // you could use true and false, but that's more typing
+        t.value = '';         // with more chance of typos
+        t.style.color = '#fff';
+      }
+    }
+  </script>
+
+  <!-- 1. Thư viện EmailJS (phải gọi trước custom.js) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- 2. File JS custom của bạn -->
+  <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>

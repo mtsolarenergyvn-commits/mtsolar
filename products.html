@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+  <title>MT Solar Energy Việt Nam</title>
+  <link rel="icon" type="image/png" href="assets/images/header-logo.png">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/tooplate-main.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <style>
+    /* Fix khung Header luôn chuẩn Flexbox 1 hàng */
+    nav.navbar .container {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+
+    /* Chỉnh Logo to & chuẩn lề trái */
+    nav.navbar .navbar-brand {
+      margin-right: 0 !important;
+      padding: 0 !important;
+    }
+
+    nav.navbar .navbar-brand img {
+      height: 100px !important;
+      /* Độ cao logo cân đối */
+      max-height: none !important;
+      width: auto !important;
+    }
+
+    /* Chỉnh Menu chữ gọn gàng, không bị vỡ dòng */
+    nav.navbar .navbar-nav {
+      flex-direction: row !important;
+    }
+
+    nav.navbar .navbar-nav .nav-link {
+      font-size: 50 !important;
+      /* Kích thước chữ vừa đẹp */
+      font-weight: 700 !important;
+      white-space: nowrap !important;
+      /* Cấm rớt dòng chữ (như CONTACT US) */
+      padding: 10px 15px !important;
+      /* Khoảng cách giữa các nút */
+    }
+  </style>
+  <!-- Bộ dịch tự động Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'vi',
+        includedLanguages: 'en,zh-CN,vi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    function changeLanguage(langCode) {
+      // 1. Cập nhật giao diện nút Active
+      document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.classList.remove('active');
+      });
+
+      var targetId = 'lang-' + (langCode === 'zh-CN' ? 'zh' : langCode);
+      var activeBtn = document.getElementById(targetId);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      // 2. Kích hoạt dịch bằng cookie chuẩn của Google Translate
+      if (langCode === 'vi') {
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;" + window.location.host;
+      } else {
+        document.cookie = "googtrans=/vi/" + langCode + "; path=/;";
+        document.cookie = "googtrans=/vi/" + langCode + "; path=/;" + window.location.host;
+      }
+
+      // Tải lại trang nhẹ để áp dụng ngôn ngữ mới
+      window.location.reload();
+      // Tự bật active cho nút theo Cookie khi trang reload xong
+      document.addEventListener("DOMContentLoaded", function () {
+        var match = document.cookie.match(/(?:^|; )googtrans=([^;]*)/);
+        var lang = match ? match[1].split('/')[2] : 'vi';
+        var targetId = 'lang-' + (lang === 'zh-CN' ? 'zh' : lang);
+
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        if (document.getElementById(targetId)) document.getElementById(targetId).classList.add('active');
+      });
+    }
+  </script>
+  <script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <style>
+    /* CSS ẩn bộ chọn mặc định của Google và làm đẹp nút bấm */
+    #google_translate_element {
+      display: none !important;
+    }
+
+    body {
+      top: 0px !important;
+    }
+
+    .goog-te-banner-frame {
+      display: none !important;
+    }
+
+    .lang-btn {
+      cursor: pointer;
+      opacity: 0.7;
+      padding: 0 4px;
+      text-decoration: none !important;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      opacity: 1;
+      font-weight: bold !important;
+      border-bottom: 2px solid #fff;
+    }
+
+    /* Ẩn hoàn toàn thanh công cụ Google Translate và sửa lỗi tràn khung */
+    /* Triệt tiêu khung trắng Google Translate tiêm vào đầu trang */
+    .skiptranslate {
+      display: none !important;
+    }
+
+    /* Ép body không bị đẩy xuống dưới */
+    body {
+      top: 0px !important;
+      position: static !important;
+    }
+
+    iframe.goog-te-banner-frame {
+      display: none !important;
+    }
+
+    #google_translate_element {
+      display: none !important;
+    }
+
+    /* Style mặc định cho các nút ngôn ngữ */
+    .lang-btn {
+      cursor: pointer;
+      opacity: 0.7;
+      padding: 2px 6px;
+      text-decoration: none !important;
+      color: #fff !important;
+      transition: all 0.2s ease;
+    }
+
+    /* Style KHI DƯỢC ACTIVE: In đậm tuyệt đối + gạch chân trắng */
+    .lang-btn.active {
+      opacity: 1 !important;
+      font-weight: 900 !important;
+      border-bottom: 2px solid #ffffff !important;
+    }
+
+    .ico-zalo span {
+      font-size: 10px;
+      font-weight: bold;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+  </style>
+  <style>
+    /* Căn giữa và đưa các nút 1 2 3 về nằm ngang */
+    .page-navigation ul {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 30px 0 !important;
+      gap: 8px !important;
+    }
+
+    .page-navigation ul li {
+      display: inline-block !important;
+      margin: 0 !important;
+    }
+
+    .page-navigation ul li a {
+      display: inline-block !important;
+      width: 40px !important;
+      height: 40px !important;
+      line-height: 40px !important;
+      text-align: center !important;
+      background-color: #eee !important;
+      color: #333 !important;
+      font-weight: bold !important;
+      border-radius: 4px !important;
+      text-decoration: none !important;
+    }
+
+    /* Tô màu xanh cho nút trang hiện tại */
+    .page-navigation ul li.current-page a,
+    .page-navigation ul li a:hover {
+      background-color: #337ab7 !important;
+      color: #fff !important;
+    }
+  </style>
+  <!--
+Tooplate 2114 Pixie
+https://www.tooplate.com/view/2114-pixie
+-->
+</head>
+
+<body>
+
+  <!-- Pre Header -->
+  <div id="pre-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-between align-items-center">
+          <span>CÔNG TY TNHH MT SOLAR ENERGY VIỆT NAM - ĐỐI TÁC CUNG CẤP HỆ THỐNG VẬT TƯ VÀ PHỤ KIỆN NĂNG LƯỢNG MẶT TRỜI
+            CHẤT LƯỢNG</span>
+          <!-- Khối chọn ngôn ngữ nằm bên phải -->
+          <div class="language-select notranslate" translate="no" style="font-size: 13px; color: #fff;">
+            <a onclick="window.selectedLang='vi'; changeLanguage('vi');" id="lang-vi" class="lang-btn">VN</a> |
+            <a onclick="window.selectedLang='en'; changeLanguage('en');" id="lang-en" class="lang-btn">EN</a> |
+            <a onclick="window.selectedLang='zh'; changeLanguage('zh-CN');" id="lang-zh" class="lang-btn">中文</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#" style="height: auto !important; line-height: normal !important;"><img
+          src="assets/images/header-logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <span></span>
+      <span></span>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Trang Chủ
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="products.html">Sản Phẩm</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Về Chúng Tôi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Thông Tin Liên Hệ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <!-- Items Starts Here -->
+  <div class="featured-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-12">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h1>Sản Phẩm</h1>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-12">
+          <div id="filters" class="button-group">
+            <!-- <button class="btn btn-primary" data-filter="*">Tất Cả</button>
+              <button class="btn btn-primary" data-filter=".new">Newest</button>
+              <button class="btn btn-primary" data-filter=".low">Low Price</button>
+              <button class="btn btn-primary" data-filter=".high">Hight Price</button> -->
+            <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Nhập tên sản phẩm cần tìm..."
+              style="padding: 10px 15px; width: 100%; max-width: 400px; border: 1px solid #ccc; border-radius: 4px; outline: none;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="featured container no-gutter">
+
+    <!-- <div class="row posts">
+      <div id="1" class="item new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-01.jpg" alt="">
+            <h4>L-Feet 80 mm</h4>
+            <h6>(Full set)</h6>
+          </div>
+        </a>
+      </div>
+      <div id="2" class="item high col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-02.jpg" alt="">
+            <h4>L-Feer 80 mm</h4>
+            <h6>(Kilp Lock)</h6>
+          </div>
+        </a>
+      </div>
+      <div id="3" class="item low col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-03.jpg" alt="">
+            <h4>L-Feet 160 mm</h4>
+            <h6>(Full set)</h6>
+          </div>
+        </a>
+      </div>
+      <div id="4" class="item low col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-04.jpg" alt="">
+            <h4>Mid Clamp</h4>
+            <h6>...</h6>
+          </div>
+        </a>
+      </div>
+      <div id="5" class="item new high col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-05.jpg" alt="">
+            <h4>End Clamp</h4>
+            <h6>...</h6>
+          </div>
+        </a>
+      </div>
+      <div id="6" class="item new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-06.jpg" alt="">
+            <h4>Grounding Lug</h4>
+            <h6>...</h6>
+          </div>
+        </a>
+      </div>
+      <div id="7" class="item new high col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-07.jpg" alt="">
+            <h4>Long Stud</h4>
+            <h6>...</h6>
+          </div>
+        </a>
+      </div>
+      <div id="8" class="item low new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-08.jpg" alt="">
+            <h4>L Feet Long Stud Bolt</h4>
+            <h6>(Full set)</h6>
+          </div>
+        </a>
+      </div>
+      <div id="9" class="item new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-09.jpg" alt="">
+            <h4>Walkway</h4>
+            <h6>(400x4000mm)</h6>
+          </div>
+        </a>
+      </div>
+      <div id="10" class="item new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-10.jpg" alt="">
+            <h4>Rail Splice kit</h4>
+            <h6>...</h6>
+          </div>
+        </a>
+      </div>
+      <div id="11" class="item new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-11.jpg" alt="">
+            <h4>PV Rail</h4>
+            <h6>4.8 mm</h6>
+          </div>
+        </a>
+      </div>
+      <div id="12" class="item new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-12.jpg" alt="">
+            <h4>Flat tile hook</h4>
+            <h6>...</h6>
+          </div>
+        </a>
+      </div>
+      <div id="13" class="item new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-13.jpg" alt="">
+            <h4>Cpac hook</h4>
+            <h6>...</h6>
+          </div>
+        </a>
+      </div>
+      <div id="14" class="item new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-14.jpg" alt="">
+            <h4>Klip Lock 700</h4>
+            <h6>(Big)</h6>
+          </div>
+        </a>
+      </div>
+      <div id="15" class="item new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-15.jpg" alt="">
+            <h4>Klip Lock 700</h4>
+            <h6>(Samll)</h6>
+          </div>
+        </a>
+      </div>
+      <div id="16" class="item new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-16.jpg" alt="">
+            <h4>Klip Lock 750</h4>
+            <h6>...</h6>
+          </div>
+        </a>
+      </div>
+      <div id="17" class="item new col-md-4">
+        <a href="single-product.html">
+          <div class="featured-item">
+            <img src="assets/images/item-17.jpg" alt="">
+            <h4>MC4</h4>
+            <h6>(Fullset)</h6>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+  </div> -->
+    <!-- Khung chứa sản phẩm -->
+    <!-- Khung chứa sản phẩm -->
+    <!-- Khung chứa các nút phân loại danh mục (Sẽ tự động sinh ra ở đây) -->
+    <div id="category-filter-container" class="mb-4 d-flex flex-wrap gap-2 justify-content-center"></div>
+
+    <!-- Khung chứa sản phẩm -->
+    <div class="row" id="product-list"></div>
+
+    <!-- Khung chứa phân trang -->
+    <nav class="mt-4">
+      <ul class="pagination justify-content-center" id="pagination-container"></ul>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+    <script>
+      (function () {
+        const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRd6hgVDa7gNCty0iJyypcnhOMm1lo1dxI-Jfp8CqEkHkQqSRgzYjAO46d8iQ-x1ETVFlasWJjVYzSx/pub?gid=0&single=true&output=csv";
+
+        let allProducts = [];
+        let filteredProducts = [];
+        let currentPage = 1;
+        let itemsPerPage = 6;
+        let currentCategory = 'all'; // Lưu danh mục đang chọn
+
+        Papa.parse(SHEET_CSV_URL, {
+          download: true,
+          header: true,
+          complete: function (results) {
+            allProducts = results.data.filter(item => item.name || item.image);
+            filteredProducts = allProducts;
+
+            renderCategories(); // Vẽ các nút phân loại
+            renderPage(currentPage);
+            renderPagination();
+          }
+        });
+
+        // 1. Hàm tự động sinh các nút lọc danh mục từ Google Sheets
+        function renderCategories() {
+          const categoryContainer = document.getElementById('category-filter-container');
+          if (!categoryContainer) return;
+
+          // Lấy danh sách các category độc lập (không trùng nhau, bỏ qua dòng trống)
+          let categories = ['all', ...new Set(allProducts.map(item => item.category ? item.category.trim() : '').filter(cat => cat !== ''))];
+
+          categoryContainer.innerHTML = '';
+          categories.forEach(cat => {
+            let displayName = cat === 'all' ? 'Tất cả' : cat;
+            let activeClass = currentCategory === cat ? 'btn-primary' : 'btn-outline-primary';
+
+            categoryContainer.innerHTML += `
+                <button class="btn ${activeClass} btn-sm px-3" onclick="window.filterByCategory('${cat}')">${displayName}</button>
+            `;
+          });
+        }
+
+        // 2. Hàm xử lý khi bấm chọn danh mục
+        window.filterByCategory = function (category) {
+          currentCategory = category;
+          renderCategories(); // Cập nhật lại màu nút đang chọn
+          applyFilters();     // Lọc lại dữ liệu
+        };
+
+        // 3. Hàm lọc chung (Kết hợp cả Danh mục + Từ khóa tìm kiếm)
+        function applyFilters() {
+          let keyword = document.querySelector('input[type="text"]') ? document.querySelector('input[type="text"]').value.toLowerCase().trim() : '';
+
+          filteredProducts = allProducts.filter(item => {
+            let name = item.name ? item.name.toLowerCase() : '';
+            let itemCat = item.category ? item.category.trim() : '';
+
+            let matchCategory = (currentCategory === 'all' || itemCat === currentCategory);
+            let matchKeyword = name.includes(keyword);
+
+            return matchCategory && matchKeyword;
+          });
+
+          currentPage = 1;
+          renderPage(currentPage);
+          renderPagination();
+        }
+
+        // 4. Hàm vẽ sản phẩm theo trang
+        function renderPage(page) {
+          const productListContainer = document.getElementById('product-list');
+          if (!productListContainer) return;
+
+          productListContainer.innerHTML = '';
+
+          let start = (page - 1) * itemsPerPage;
+          let end = start + itemsPerPage;
+          let paginatedItems = filteredProducts.slice(start, end);
+
+          if (paginatedItems.length === 0) {
+            productListContainer.innerHTML = `<div class="col-12 text-center text-muted"><p>Không tìm thấy sản phẩm nào phù hợp!</p></div>`;
+            return;
+          }
+
+          paginatedItems.forEach((item) => {
+            let realIndex = allProducts.indexOf(item);
+
+            let imageUrl = item.image ? item.image.trim() : '';
+            if (imageUrl.includes('drive.google.com')) {
+              let fileIdMatch = imageUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
+              if (fileIdMatch && fileIdMatch[1]) {
+                imageUrl = `https://lh3.googleusercontent.com/d/${fileIdMatch[1]}`;
+              }
+            }
+
+            const productHTML = `
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-3 shadow-sm">
+                        <a href="single-product.html?id=${realIndex}">
+                            <img src="${imageUrl}" class="card-img-top" alt="${item.name || ''}" style="height: 200px; object-fit: contain;">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="single-product.html?id=${realIndex}" class="text-decoration-none">${item.name || 'Chưa có tên'}</a>
+                            </h5>
+                            <p class="card-text text-muted">${item.description || '...'}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            productListContainer.innerHTML += productHTML;
+          });
+        }
+
+        // 5. Hàm vẽ thanh phân trang
+        function renderPagination() {
+          const paginationContainer = document.getElementById('pagination-container');
+          if (!paginationContainer) return;
+
+          paginationContainer.innerHTML = '';
+          let totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+
+          if (totalPages <= 1) return;
+
+          let prevDisabled = currentPage === 1 ? 'disabled' : '';
+          paginationContainer.innerHTML += `
+            <li class="page-item ${prevDisabled}">
+                <a class="page-link" href="#" onclick="window.changeProductPage(${currentPage - 1}); return false;">Trước</a>
+            </li>
+        `;
+
+          for (let i = 1; i <= totalPages; i++) {
+            let active = i === currentPage ? 'active' : '';
+            paginationContainer.innerHTML += `
+                <li class="page-item ${active}">
+                    <a class="page-link" href="#" onclick="window.changeProductPage(${i}); return false;">${i}</a>
+                </li>
+            `;
+          }
+
+          let nextDisabled = currentPage === totalPages ? 'disabled' : '';
+          paginationContainer.innerHTML += `
+            <li class="page-item ${nextDisabled}">
+                <a class="page-link" href="#" onclick="window.changeProductPage(${currentPage + 1}); return false;">Sau</a>
+            </li>
+        `;
+        }
+
+        window.changeProductPage = function (page) {
+          let totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+          if (page < 1 || page > totalPages) return;
+          currentPage = page;
+          renderPage(currentPage);
+          renderPagination();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        // 6. Lắng nghe ô tìm kiếm Real-time kết hợp cùng phân loại
+        const searchInput = document.querySelector('input[type="text"]');
+        if (searchInput) {
+          searchInput.addEventListener('input', function () {
+            applyFilters();
+          });
+        }
+      })();
+    </script>
+    <!-- Featred Page Ends Here -->
+
+
+    <!-- Subscribe Form Starts Here -->
+
+    <div class="subscribe-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <div class="line-dec"></div>
+              <h1>Để lại thông tin liên hệ tại đây</h1>
+            </div>
+          </div>
+          <div class="col-md-8 offset-md-2">
+            <div class="main-content">
+              <p>MT Solar Energy hy vọng có thể sẽ cùng đồng hành cùng bạn trong các dự án sắp tới</p>
+              <div class="container">
+                <form id="subscribe" onsubmit="handleSendEmail(event)">
+                  <div class="row">
+                    <div class="col-md-7">
+                      <fieldset>
+                        <!-- Đã bỏ required để JS tự bắt lỗi theo ngôn ngữ -->
+                        <input name="email" type="text" class="form-control" id="email"
+                          placeholder="Nhập email của bạn...">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-5">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="button">Liên hệ</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Subscribe Form Ends Here -->
+
+
+
+    <!-- Footer Starts Here -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="logo">
+              <img src="assets/images/header-logo.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="footer-menu">
+              <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Trợ Giúp</a></li>
+                <li><a href="#">Chính Sách Quyền Riêng Tư</a></li>
+                <li><a href="#">Cơ Chế Hoạt Động</a></li>
+                <li><a href="#">Liên Hệ Với Chúng Tôi</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="social-icons">
+              <ul>
+                <!-- Facebook -->
+                <li><a href="https://www.facebook.com/profile.php?id=61593665455048" target="_blank"><i
+                      class="fa fa-facebook"></i></a></li>
+
+                <!-- Zalo -->
+                <li><a href="https://zalo.me/0974954509" target="_blank" class="ico-zalo"><span>Zalo</span></a></li>
+
+                <!-- Gmail / Email -->
+                <li><a href="mailto:sunsmile618@gmail.com"><i class="fa fa-envelope"></i></a></li>
+
+                <!-- WeChat -->
+                <li><a href="javascript:void(0);" onclick="alert('WeChat ID:ly19884230')"><i
+                      class="fa fa-weixin"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Ends Here -->
+
+
+    <!-- Sub Footer Starts Here -->
+    <div class="sub-footer" style="background-color: black" style="color: #ffff;" style="font-weight: bold;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="copyright-text">
+              <p>Copyright &copy; 2026 MT SOLAR ENERGY VIETNAM CO.,LTD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sub Footer Ends Here -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <!-- <script src="assets/js/isotope.js"></script> -->
+
+
+    <script language="text/Javascript">
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t) {                   //declaring the array outside of the
+        if (!cleared[t.id]) {                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value = '';         // with more chance of typos
+          t.style.color = '#fff';
+        }
+      }
+    </script>
+
+    <script>
+      const itemsPerPage = 6; // Số sản phẩm trên mỗi trang
+      let currentPage = 1;
+
+      function renderProducts() {
+        const searchInput = document.getElementById('searchInput') ? document.getElementById('searchInput').value.toLowerCase() : '';
+        const allItems = Array.from(document.querySelectorAll('.row.posts > div[class*="item"]'));
+
+        // 1. Lọc sản phẩm theo từ khóa tìm kiếm
+        const filteredItems = allItems.filter(item => {
+          const productName = item.querySelector('h4') ? item.querySelector('h4').innerText.toLowerCase() : '';
+          return productName.includes(searchInput);
+        });
+
+        // Ẩn toàn bộ sản phẩm
+        allItems.forEach(item => item.style.display = 'none');
+
+        // 2. Tính số trang
+        const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+        if (currentPage > totalPages && totalPages > 0) currentPage = 1;
+
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+
+        // Hiển thị sản phẩm trang hiện tại
+        filteredItems.slice(start, end).forEach(item => {
+          item.style.display = 'block';
+        });
+
+        // 3. Tạo nút 1 2 3 chuẩn CSS cũ của template
+        renderPagination(totalPages);
+      }
+
+      function renderPagination(totalPages) {
+        const pageContainer = document.querySelector('.page-navigation ul') || document.querySelector('ul.page-navigation');
+        if (!pageContainer) return;
+
+        pageContainer.style.cssText = "display: flex !important; justify-content: center !important; list-style: none !important; padding: 0 !important; margin: 30px 0 !important; gap: 8px !important;";
+
+        let html = '';
+        if (totalPages > 1) {
+
+          // 1. Nút TRANG TRƯỚC (<) - Chỉ hiện khi đang ở từ Trang 2 trở đi
+          if (currentPage > 1) {
+            html += `<li style="display: inline-block !important;">
+                <a href="javascript:void(0);" onclick="goToPage(${currentPage - 1})" 
+                   style="display: flex !important; width: 40px !important; height: 40px !important; align-items: center !important; justify-content: center !important; background-color: #f4f4f4 !important; color: #333 !important; text-decoration: none !important; border-radius: 4px !important; border: 1px solid #ddd !important;">
+                   <i class="fa fa-angle-left"></i>
+                </a>
+               </li>`;
+          }
+
+          // 2. Tự động tính các số trang cần hiển thị (Nếu nhiều hơn 5 trang sẽ tự hiện dấu ...)
+          let startPage = Math.max(1, currentPage - 1);
+          let endPage = Math.min(totalPages, currentPage + 1);
+
+          if (currentPage === 1) endPage = Math.min(totalPages, 3);
+          if (currentPage === totalPages) startPage = Math.max(1, totalPages - 2);
+
+          // Hiện trang 1 nếu đang ở trang xa
+          if (startPage > 1) {
+            html += createPageBtn(1);
+            if (startPage > 2) {
+              html += `<li style="display: flex; align-items: flex-end; padding: 0 4px; font-weight: bold; color: #888;">...</li>`;
+            }
+          }
+
+          // Các trang ở giữa
+          for (let i = startPage; i <= endPage; i++) {
+            html += createPageBtn(i);
+          }
+
+          // Hiện trang cuối nếu đang ở xa
+          if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+              html += `<li style="display: flex; align-items: flex-end; padding: 0 4px; font-weight: bold; color: #888;">...</li>`;
+            }
+            html += createPageBtn(totalPages);
+          }
+
+          // 3. Nút TRANG SAU (>) - Chỉ hiện khi chưa tới trang cuối
+          if (currentPage < totalPages) {
+            html += `<li style="display: inline-block !important;">
+                <a href="javascript:void(0);" onclick="goToPage(${currentPage + 1})" 
+                   style="display: flex !important; width: 40px !important; height: 40px !important; align-items: center !important; justify-content: center !important; background-color: #f4f4f4 !important; color: #333 !important; text-decoration: none !important; border-radius: 4px !important; border: 1px solid #ddd !important;">
+                   <i class="fa fa-angle-right"></i>
+                </a>
+               </li>`;
+          }
+        }
+        pageContainer.innerHTML = html;
+      }
+
+      // Hàm bổ trợ tạo nút số trang
+      function createPageBtn(i) {
+        const isCurrent = (i === currentPage);
+        const bg = isCurrent ? '#337ab7' : '#f4f4f4';
+        const color = isCurrent ? '#ffffff' : '#333333';
+        return `<li style="display: inline-block !important;">
+            <a href="javascript:void(0);" onclick="goToPage(${i})" 
+               style="display: flex !important; width: 40px !important; height: 40px !important; align-items: center !important; justify-content: center !important; background-color: ${bg} !important; color: ${color} !important; text-decoration: none !important; border-radius: 4px !important; font-weight: bold !important; border: 1px solid #ddd !important;">
+               ${i}
+            </a>
+           </li>`;
+      }
+
+      function goToPage(page) {
+        currentPage = page;
+        renderProducts();
+        // Cuộn mượt lên đầu danh sách sản phẩm
+        const productSection = document.querySelector('.featured-page');
+        if (productSection) productSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function filterProducts() {
+        currentPage = 1;
+        renderProducts();
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        renderProducts();
+      });
+    </script>
+
+    <script>
+      document.addEventListener('click', function (e) {
+        const productLink = e.target.closest('a[href="single-product.html"]');
+        if (productLink) {
+          e.preventDefault();
+
+          // 1. Lấy tên file ảnh chuẩn xác
+          const imgTag = productLink.querySelector('img');
+          let imgName = 'item-01.jpg';
+          if (imgTag) {
+            const imgSrc = imgTag.getAttribute('src');
+            imgName = imgSrc.substring(imgSrc.lastIndexOf('/') + 1);
+          }
+
+          // 2. Lấy tên sản phẩm và dọn sạch dấu ngoặc thừa ở h6
+          const itemBox = productLink.querySelector('.featured-item');
+          let title = "Sản Phẩm MT Solar";
+          if (itemBox) {
+            const h4Text = itemBox.querySelector('h4') ? itemBox.querySelector('h4').innerText.trim() : '';
+            const h6Text = itemBox.querySelector('h6') ? itemBox.querySelector('h6').innerText.trim() : '';
+
+            if (h6Text && h6Text !== '...') {
+              const cleanH6 = h6Text.replace(/[()]/g, '').trim();
+              if (cleanH6) {
+                title = h4Text + ' (' + cleanH6 + ')';
+              } else {
+                title = h4Text;
+              }
+            } else {
+              title = h4Text;
+            }
+          }
+
+          // 3. Chuyển hướng sang trang chi tiết
+          window.location.href = `single-product.html?img=${encodeURIComponent(imgName)}&name=${encodeURIComponent(title)}`;
+        }
+      });
+    </script>
+
+    <!-- 1. Thư viện EmailJS (phải gọi trước custom.js) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- 2. File JS custom của bạn -->
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>
