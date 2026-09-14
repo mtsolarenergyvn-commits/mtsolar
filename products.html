@@ -233,6 +233,9 @@ https://www.tooplate.com/view/2114-pixie
             <a onclick="window.selectedLang='vi'; changeLanguage('vi');" id="lang-vi" class="lang-btn">VN</a> |
             <a onclick="window.selectedLang='en'; changeLanguage('en');" id="lang-en" class="lang-btn">EN</a> |
             <a onclick="window.selectedLang='zh'; changeLanguage('zh-CN');" id="lang-zh" class="lang-btn">中文</a>
+            <!-- Thêm nút Reload / Reset ở đây -->
+            <a onclick="hardResetLanguage();" id="lang-reload" class="lang-btn" style="cursor:pointer;"
+              title="Reset về tiếng Việt gốc">🔄</a>
           </div>
         </div>
       </div>
@@ -762,8 +765,6 @@ https://www.tooplate.com/view/2114-pixie
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
-  
     <script src="assets/js/owl.js"></script>
     <!-- <script src="assets/js/isotope.js"></script> -->
 
@@ -776,6 +777,25 @@ https://www.tooplate.com/view/2114-pixie
           t.value = '';         // with more chance of typos
           t.style.color = '#fff';
         }
+      }
+    </script>
+    <script>
+      function hardResetLanguage() {
+        var host = window.location.hostname;
+
+        // Xóa sạch cookie googtrans trên mọi domain và path
+        var paths = ['/', window.location.pathname];
+        var domains = [host, '.' + host, ''];
+
+        for (var i = 0; i < paths.length; i++) {
+          for (var j = 0; j < domains.length; j++) {
+            var domainPart = domains[j] ? "; domain=" + domains[j] : "";
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=" + paths[i] + domainPart;
+          }
+        }
+
+        // Ép reload lại trang hoàn toàn mới, loại bỏ cache
+        window.location.href = window.location.pathname + '?reset=true&t=' + new Date().getTime();
       }
     </script>
 

@@ -197,6 +197,9 @@ https://www.tooplate.com/view/2114-pixie
             <a onclick="window.selectedLang='vi'; changeLanguage('vi');" id="lang-vi" class="lang-btn">VN</a> |
             <a onclick="window.selectedLang='en'; changeLanguage('en');" id="lang-en" class="lang-btn">EN</a> |
             <a onclick="window.selectedLang='zh'; changeLanguage('zh-CN');" id="lang-zh" class="lang-btn">中文</a>
+            <!-- Thêm nút Reload / Reset ở đây -->
+            <a onclick="hardResetLanguage();" id="lang-reload" class="lang-btn" style="cursor:pointer;"
+              title="Reset về tiếng Việt gốc">🔄</a>
           </div>
         </div>
       </div>
@@ -486,6 +489,25 @@ https://www.tooplate.com/view/2114-pixie
       }
     }
   </script>
+  <script>
+    function hardResetLanguage() {
+      var host = window.location.hostname;
+
+      // Xóa sạch cookie googtrans trên mọi domain và path
+      var paths = ['/', window.location.pathname];
+      var domains = [host, '.' + host, ''];
+
+      for (var i = 0; i < paths.length; i++) {
+        for (var j = 0; j < domains.length; j++) {
+          var domainPart = domains[j] ? "; domain=" + domains[j] : "";
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=" + paths[i] + domainPart;
+        }
+      }
+
+      // Ép reload lại trang hoàn toàn mới, loại bỏ cache
+      window.location.href = window.location.pathname + '?reset=true&t=' + new Date().getTime();
+    }
+  </script>
 
   <script>
     document.addEventListener('click', function (e) {
@@ -533,7 +555,7 @@ https://www.tooplate.com/view/2114-pixie
   <!-- Thêm thư viện Isotope vào đây -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 
-   <!-- 2. File JS custom của bạn -->
+  <!-- 2. File JS custom của bạn -->
   <script src="assets/js/custom.js"></script>
 
 </body>
