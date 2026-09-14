@@ -1,3 +1,21 @@
+// Định nghĩa dự phòng cho smartresize để tránh lỗi văng script
+(function($,sr){
+  var debounce = function (func, threshold, execAsap) {
+      var timeout;
+      return function cached () {
+          var obj = this, args = arguments;
+          function delayed () {
+              if (!execAsap) func.apply(obj, args);
+              timeout = null;
+          };
+          if (timeout) clearTimeout(timeout);
+          else if (execAsap) func.apply(obj, args);
+          timeout = setTimeout(delayed, threshold || 100);
+      };
+  };
+  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+})(jQuery,'smartresize');
+
 // ==========================================
 // ĐẶT DÒNG 1 ĐẦU FILE ASSETS/JS/CUSTOM.JS
 // ==========================================
@@ -173,7 +191,7 @@ jQuery( document ).ready(function( $ ) {
 		    $container.isotope({ filter: filterValue });
 		});
 
-
+if ($.fn.flexslider) {
 		$('#carousel').flexslider({
 		    animation: "slide",
 		    controlNav: false,
@@ -191,7 +209,7 @@ jQuery( document ).ready(function( $ ) {
 		    slideshow: false,
 		    sync: "#carousel"
 		});
- 
+  }
 });
 //hàm mail góp ý
 // Hàm hòm thư ý kiến hỗ trợ đa ngôn ngữ (VN | EN | 中文) - Soi trực tiếp chữ trên nút gửi
