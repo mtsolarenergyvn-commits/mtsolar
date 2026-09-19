@@ -38,6 +38,10 @@
     langKey = 'en';
   } else if (btnText.includes('联系') || btnText.includes('提交') || btnText.includes('发送')) {
     langKey = 'zh';
+  } else if (btnText.includes('ภาษาไทย') || btnText.includes('ส่ง')) {
+    langKey = 'th';
+  } else if (btnText.includes('ພາສາລາວ') || btnText.includes('ສົ່ງ')) {
+    langKey = 'lo';
   } else if (btnText.includes('LIÊN HỆ') || btnText.includes('GỬI')) {
     langKey = 'vi';
   } else if (window.selectedLang) {
@@ -47,6 +51,8 @@
     const htmlLang = (document.documentElement.lang || '').toLowerCase();
     if (htmlLang.includes('zh') || htmlLang.includes('cn')) langKey = 'zh';
     else if (htmlLang.includes('en')) langKey = 'en';
+    else if (htmlLang.includes('th')) langKey = 'th';
+    else if (htmlLang.includes('lo')) langKey = 'lo';
     else langKey = 'vi';
   }
 
@@ -55,22 +61,30 @@
     invalidEmail: {
       vi: "Vui lòng nhập đúng định dạng email!",
       en: "Please enter a valid email address!",
-      zh: "请输入有效的电子邮件地址！"
+      zh: "请输入有效的电子邮件地址！",
+      th: "กรุณากรอกอีเมลให้ถูกต้อง!",
+      lo: "ກະລຸນາໃສ່ອີເມວໃຫ້ຖືກຕ້ອງ!"
     },
     sending: {
       vi: "Đang gửi...",
       en: "Sending...",
-      zh: "发送中..."
+      zh: "发送中...",
+      th: "กำลังส่ง...",
+      lo: "ກຳລັງສົ່ງ..."
     },
     success: {
       vi: "Gửi thông tin thành công! MT Solar Energy sẽ liên hệ lại với bạn sớm nhất.",
       en: "Thank you! We will contact you soon.",
-      zh: "发送成功！我们会尽快与您联系。"
+      zh: "发送成功！我们会尽快与您联系。",
+      th: "ส่งข้อมูลสำเร็จ! MT Solar Energy จะติดต่อกลับโดยเร็วที่สุด",
+      lo: "ສົ່ງຂໍ້ມູນສຳເລັດ! MT Solar Energy ຈະຕິດຕໍ່ກັບທ່ານໄວໆນີ້."
     },
     failed: {
       vi: "Gửi thất bại! Bạn hãy kiểm tra lại cấu hình Key EmailJS nhé.",
       en: "Failed to send. Please check your EmailJS setup!",
-      zh: "发送失败！请检查 EmailJS 设置。"
+      zh: "发送失败！请检查 EmailJS 设置。",
+      th: "ส่งไม่สำเร็จ! กรุณาตรวจสอบการตั้งค่า EmailJS",
+      lo: "ສົ່ງບໍ່ສຳເລັດ! ກະລຸນາກວດສອບການຕັ້ງຄ່າ EmailJS"
     }
   };
 
@@ -238,6 +252,10 @@ function handleMainContact(e) {
         langKey = 'en';
     } else if (btnText.includes('联系') || btnText.includes('提交') || btnText.includes('发送') || btnText.includes('接')) {
         langKey = 'zh';
+    } else if (btnText.includes('ส่ง')) {
+    langKey = 'th';
+    } else if (btnText.includes('ສົ່ງ')) {
+    langKey = 'lo';
     } else if (btnText.includes('LIÊN HỆ') || btnText.includes('GỬI')) {
         langKey = 'vi';
     } else if (window.selectedLang) {
@@ -250,6 +268,10 @@ function handleMainContact(e) {
             alert("Please fill in all required fields!");
         } else if (langKey === 'zh') {
             alert("请填写所有必填字段！");
+        } else if (langKey === 'th') {
+            alert("กรุณากรอกข้อมูลที่จำเป็นให้ครบถ้วน!");
+        } else if (langKey === 'lo') {
+            alert("ກະລຸນາຕື່ມຂໍ້ມູນໃສ່, ໃຫ້ຄົບຖ້ວນ!");
         } else {
             alert("Vui lòng điền đầy đủ thông tin bắt buộc!");
         }
@@ -262,6 +284,10 @@ function handleMainContact(e) {
             alert("Please enter a valid email address!");
         } else if (langKey === 'zh') {
             alert("请输入有效的电子邮件地址！");
+        } else if (langKey === 'th') {
+            alert("กรุณากรอกอีเมลให้ถูกต้อง!");
+        } else if (langKey === 'lo') {
+            alert("ກະລຸນາໃສ່ອີເມວໃຫ້ຖືກຕ້ອງ!");    
         } else {
             alert("Vui lòng nhập địa chỉ email hợp lệ!");
         }
@@ -272,6 +298,8 @@ function handleMainContact(e) {
     let finalSubject = subject;
     if (langKey === 'en') finalSubject = "[EN] " + subject;
     if (langKey === 'zh') finalSubject = "[CN] " + subject;
+    if (langKey === 'th') finalSubject = "[TH] " + subject;
+    if (langKey === 'lo') finalSubject = "[LO] " + subject;
 
     // 6. Gửi qua EmailJS
     emailjs.send("Service_mail", "template_feedback", {
@@ -285,6 +313,10 @@ function handleMainContact(e) {
             alert("Feedback sent successfully! Thank you for your contribution.");
         } else if (langKey === 'zh') {
             alert("意见发送成功！感谢您的贡献。");
+        } else if (langKey === 'th') {
+            alert("ส่งข้อเสนอแนะสำเร็จ! ขอบคุณสำหรับการสนับสนุนของคุณ");
+        } else if (langKey === 'lo') {
+            alert("ສົ່ງຄຳຄິດເຫັນສຳເລັດ! ຂໍຂອບໃຈສຳລັບການປະກອບສ່ວນຂອງທ່ານ.");
         } else {
             alert("Gửi ý kiến thành công! Cảm ơn đóng góp của bạn.");
         }
@@ -296,6 +328,10 @@ function handleMainContact(e) {
             alert("Failed to send, please try again later!");
         } else if (langKey === 'zh') {
             alert("发送失败，请稍后重试！");
+        } else if (langKey === 'th') {
+            alert("ส่งไม่สำเร็จ! กรุณาลองใหม่อีกครั้งในภายหลัง");
+        } else if (langKey === 'lo') {
+            alert("ສົ່ງບໍ່ສຳເລັດ! ກະລຸນາລອງใหม่อີກຄັ້ງ.");
         } else {
             alert("Gửi thất bại, vui lòng thử lại sau!");
         }

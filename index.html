@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
-  <title>MT Solar Energy Việt Nam</title>
+  <title>MT Solar Energy</title>
   <link rel="icon" type="image/png" href="assets/images/header-logo.png">
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -63,7 +63,7 @@
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'vi',
-        includedLanguages: 'en,zh-CN,vi',
+        includedLanguages: 'en,zh-CN,vi,th,lo',
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
         autoDisplay: false
       }, 'google_translate_element');
@@ -190,17 +190,32 @@ https://www.tooplate.com/view/2114-pixie
     <div class="container">
       <div class="row">
         <div class="col-md-12 d-flex justify-content-between align-items-center">
-          <span>CÔNG TY TNHH MT SOLAR ENERGY VIỆT NAM - ĐỐI TÁC CUNG CẤP HỆ THỐNG VẬT TƯ VÀ PHỤ KIỆN NĂNG LƯỢNG MẶT TRỜI
-            CHẤT LƯỢNG</span>
-          <!-- Khối chọn ngôn ngữ nằm bên phải -->
-          <div class="language-select notranslate" translate="no" style="font-size: 13px; color: #fff;">
-            <a onclick="window.selectedLang='vi'; changeLanguage('vi');" id="lang-vi" class="lang-btn">VN</a> |
-            <a onclick="window.selectedLang='en'; changeLanguage('en');" id="lang-en" class="lang-btn">EN</a> |
-            <a onclick="window.selectedLang='zh'; changeLanguage('zh-CN');" id="lang-zh" class="lang-btn">中文</a>
-            <!-- Thêm nút Reload / Reset ở đây -->
-            <a onclick="hardResetLanguage();" id="lang-reload" class="lang-btn" style="cursor:pointer;"
-              title="Reset về tiếng Việt gốc">🔄</a>
+          <span>CÔNG TY MT SOLAR ENERGY - ĐỐI TÁC CUNG CẤP HỆ THỐNG VẬT TƯ VÀ PHỤ KIỆN NĂNG LƯỢNG MẶT TRỜI CHẤT
+            LƯỢNG</span>
+
+          <!-- Khối chọn ngôn ngữ dạng Dropdown sổ xuống -->
+          <div class="language-select notranslate dropdown d-inline-block" translate="no" style="font-size: 13px;">
+            <a class="text-white dropdown-toggle" href="#" id="langDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="text-decoration: none; cursor: pointer;">
+              🌐 Ngôn ngữ / Markets
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow-sm border-0" aria-labelledby="langDropdown">
+              <a class="dropdown-item py-2" onclick="window.selectedLang='vi'; changeLanguage('vi');" id="lang-vi"
+                style="cursor: pointer;">vn Tiếng Việt (VN)</a>
+              <a class="dropdown-item py-2" onclick="window.selectedLang='en'; changeLanguage('en');" id="lang-en"
+                style="cursor: pointer;">gb English (EN)</a>
+              <a class="dropdown-item py-2" onclick="window.selectedLang='zh'; changeLanguage('zh-CN');" id="lang-zh"
+                style="cursor: pointer;">cn 中文 (ZH)</a>
+              <a class="dropdown-item py-2" onclick="window.selectedLang='th'; changeLanguage('th');" id="lang-th"
+                style="cursor: pointer;">th ภาษาไทย (TH)</a>
+              <a class="dropdown-item py-2" onclick="window.selectedLang='lo'; changeLanguage('lo');" id="lang-lo"
+                style="cursor: pointer;">la ພາສາລາວ (LO)</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item py-2 text-danger font-weight-bold" onclick="hardResetLanguage();" id="lang-reload"
+                style="cursor: pointer;" title="Reset về tiếng Việt gốc">🔄 Reset ngôn ngữ</a>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -233,6 +248,9 @@ https://www.tooplate.com/view/2114-pixie
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Thông Tin Liên Hệ</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="branches.html">Chi Nhánh</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -245,7 +263,7 @@ https://www.tooplate.com/view/2114-pixie
       <div class="row">
         <div class="col-md-12">
           <div class="caption">
-            <h2>MT Solar Energy Việt Nam</h2>
+            <h2>CÔNG TY MT SOLAR ENERGY</h2>
             <div class="line-dec"></div>
             <p>Chúng tôi chuyển tôi là nhà cung cấp uy tín các thiết bị và phụ kiện cho các dự án năng lượng mặt
               trời.Chúng tôi đã có mặt tại Việt Nam.
